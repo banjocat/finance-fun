@@ -18,10 +18,13 @@ def compound(gain, compound_rate, years, sigs=2):
     1.49
     >>> compound(1, 4, 1)
     2.44
+    >>> 100 * compound(.05, 1, 2)
+    110.25
     '''
     rate = float(gain) / compound_rate
     result = math.pow(1 + rate, years * compound_rate)
     return round(result, sigs)
+
 
 
 if __name__ == '__main__':

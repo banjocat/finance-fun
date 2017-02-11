@@ -1,7 +1,7 @@
 import math
 
 
-def interest(gain, years):
+def interest(rate, years):
     '''
     Interest formula with N = 1
 
@@ -9,9 +9,9 @@ def interest(gain, years):
     >>> round(val, 2)
     1.01
     '''
-    return math.pow(1 + gain, years)
+    return math.pow(1 + rate, years)
 
-def compound(gain, compound_rate, years):
+def compound(rate, compound_amount, years):
     '''
     compound interest with N = 1
 
@@ -25,10 +25,26 @@ def compound(gain, compound_rate, years):
     >>> round(val, 2)
     110.25
     '''
-    rate = float(gain) / compound_rate
-    result = math.pow(1 + rate, years * compound_rate)
+    rate = float(rate) / compound_amount
+    result = math.pow(1 + rate, years * compound_amount)
     return result
 
+def continous_compound(rate, years):
+    '''
+    theortical continous compound rate
+
+    >>> val = continous_compound(.05, 1)
+    >>> round(val, 4)
+    1.0513
+    >>> val = continous_compound(.05, 2)
+    >>> round(val, 4)
+    1.1052
+    >>> val = continous_compound(.08, 5)
+    >>> round(val, 4)
+    1.4918
+    '''
+    rT = rate * years
+    return math.pow(math.e, rT)
 
 
 if __name__ == '__main__':

@@ -5,25 +5,25 @@ def interest(gain, years):
     '''
     Interest formula with N = 1
 
-    >>> interest(.01, 1)
+    >>> round(interest(.01, 1), 2)
     1.01
     '''
     return math.pow(1 + gain, years)
 
-def compound(gain, compound_rate, years, sigs=2):
+def compound(gain, compound_rate, years):
     '''
     compound interest with N = 1
 
-    >>> compound(.08, 4, 5)
+    >>> round(compound(.08, 4, 5), 2)
     1.49
-    >>> compound(1, 4, 1)
+    >>> round(compound(1, 4, 1), 2)
     2.44
-    >>> 100 * compound(.05, 1, 2)
+    >>> round(100 * compound(.05, 1, 2), 2)
     110.25
     '''
     rate = float(gain) / compound_rate
     result = math.pow(1 + rate, years * compound_rate)
-    return round(result, sigs)
+    return result
 
 
 

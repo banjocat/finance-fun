@@ -46,6 +46,17 @@ def continous_compound(rate, years):
     rT = rate * years
     return math.pow(math.e, rT)
 
+def zcb(rate, current_years, mature_years):
+    '''
+    zero coupond bond rate
+
+    >>> val = zcb(.05, 2, 1)
+    >>> round(val, 2)
+    1.1
+    '''
+    rTt = -1 * rate * (mature_years - current_years)
+    return math.pow(math.e, rTt)
+
 
 if __name__ == '__main__':
     import doctest

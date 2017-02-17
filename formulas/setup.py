@@ -8,6 +8,7 @@ setup(
             Extension('finance_formulas',
                 ['finance_formulas.cpp'],
                 libraries=['boost_python', 'python2.7'],
-                )
+                extra_compile_args = ['-std=c++11']
+                ),
             ],
         )
